@@ -84,3 +84,17 @@
     background-color: #3a3a8f;
   }
   
+  footer {
+    color: white;
+    font-family: 'Helvetica', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 20%;
+    position: absolute;
+    /* margin-top: 500px; */
+    bottom: 40px;
+    left: 40px;
+  }
+  
+  body {
+    min-height: 100vh;
+  }
+  
