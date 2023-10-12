@@ -2,8 +2,7 @@
 const showMessageButton = document.getElementById('showMessageButton');
 const messageElement = document.getElementById('message');
 
-const apiUrl = 'http://api.football-data.org/v4/competitions/';
-const corsProxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(apiUrl);
+const apiUrl = 'https://www.balldontlie.io/api/v1/players';
 
 // Function to show the message when the button is clicked
 showMessageButton.addEventListener('click', function() {
@@ -15,7 +14,7 @@ showMessageButton.addEventListener('click', function() {
         return response.json()}
         )
     .then(data => {
-        console.log(data.competitions[0].name);
+        console.log(data);
     })
     .catch(error => {
         console.error('Error fetching data:', error);
