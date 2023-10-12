@@ -7,7 +7,7 @@ const apiUrl = 'https://www.balldontlie.io/api/v1/players';
 // Function to show the message when the button is clicked
 showMessageButton.addEventListener('click', function() {
   // Set the text of the message element
-    fetch(corsProxyUrl, {
+    fetch(apiUrl, {
         method: 'GET',
     })
     .then(response => {
