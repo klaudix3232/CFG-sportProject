@@ -82,7 +82,6 @@ const previousPage = () => {
 
 const selectPlayer = (playerId) => {
   console.log(playerId);
-  clearPlayerList();
   fetchPlayerStats(playerId);
 }
 
@@ -110,6 +109,13 @@ const showPlayer = (playerData) => {
   playerView.style.display = 'block';
   playerListView.style.display = 'none';
 
+  var backButton = document.createElement("div");
+  backButton.textContent = 'Back';
+  backButton.onclick = () => {
+    backToPlayerList();
+  }
+  playerView.appendChild(backButton);
+
   var playerName = document.createElement("p");
   playerName.textContent = playerData.first_name + ' ' + playerData.last_name;
   playerView.appendChild(playerName);
@@ -117,6 +123,9 @@ const showPlayer = (playerData) => {
   var playerPosition = document.createElement("p");
   playerPosition.textContent = playerData.position;
   playerView.appendChild(playerPosition);
+}
 
-
+const backToPlayerList = () => {
+  playerView.style.display = 'none';
+  playerListView.style.display = 'block';
 }
