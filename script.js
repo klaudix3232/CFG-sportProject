@@ -106,6 +106,7 @@ const fetchPlayerStats = (playerId) => {
 }
 
 const showPlayer = (playerData) => {
+  playerView.innerHTML = '';
   playerView.style.display = 'block';
   playerListView.style.display = 'none';
 
