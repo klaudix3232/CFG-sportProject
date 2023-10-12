@@ -16,8 +16,8 @@ const fetchPlayers = (page) => {
   apiUrlwithPage = apiUrl + '?page=' + page;
   console.log(apiUrlwithPage);
     // Set the text of the message element
-    fetch(apiUrlwithPage, {
-      method: 'GET',
+  fetch(apiUrlwithPage, {
+    method: 'GET',
   })
   .then(response => {
       return response.json()}
@@ -85,4 +85,39 @@ const previousPage = () => {
 
 const selectPlayer = (playerId) => {
   console.log(playerId);
+  clearPlayerList();
+  fetchPlayerStats(playerId);
+}
+
+const fetchPlayerStats = (playerId) => {
+  const url = 'https://www.balldontlie.io/api/v1/players/';
+  const playerURL = url + playerId;
+
+  fetch(playerURL, {
+    method: 'GET',
+  })
+  .then(response => {
+      return response.json()}
+      )
+  .then(data => {
+    showPlayer(data);
+
+  })
+  .catch(error => {
+      console.error('Error fetching data:', error);
+  });
+}
+
+const showPlayer = (playerData) => {
+  const playerView = document.getElementById('player-view');
+
+  var playerName = document.createElement("p");
+  playerName.textContent = playerData.first_name + ' ' + playerData.last_name;
+  playerView.appendChild(playerName);
+
+  var playerPosition = document.createElement("p");
+  playerPosition.textContent = playerData.position;
+  playerView.appendChild(playerPosition);
+
+
 }

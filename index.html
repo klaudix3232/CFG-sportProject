@@ -7,10 +7,19 @@
   <h1>football Competition</h1>
   <p id="message">Click the button to reveal a message:</p>
   <button id="showMessageButton">Show Message</button>
+
+  <!-- Only shown if player is selected -->
+  <div id="player-view">
+  </div>
+
+  <!-- Only shown if player list is pulled -->
+  <div id="list-view">
     <ul id="player-list"></ul>
+    <div id="previousButton" onclick="previousPage()"><</div>
+    <div id="pageNumber"></div>
+    <div id="nextButton" onclick="nextPage()">></div>
+  </div>
+
   <script src="script.js"></script>
-  <div id="previousButton" onclick="previousPage()"><</div>
-  <div id="pageNumber"></div>
-  <div id="nextButton" onclick="nextPage()">></div>
   </body>
 </html>
