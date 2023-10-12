@@ -14,9 +14,25 @@ showMessageButton.addEventListener('click', function() {
         return response.json()}
         )
     .then(data => {
-        console.log(data);
+      data.data.forEach(player => {
+        addPlayer(player);
+      });
     })
     .catch(error => {
         console.error('Error fetching data:', error);
     });
 });
+
+const addPlayer = (player) => {
+    // Select the <ul> element using its ID
+    var ulElement = document.getElementById("player-list");
+
+    // Create a new <li> element
+    var liElement = document.createElement("li");
+
+    // Add text content to the <li> element
+    liElement.textContent = player.last_name;
+
+    // Append the <li> element to the <ul> element
+    ulElement.appendChild(liElement);
+}
