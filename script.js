@@ -52,6 +52,11 @@ const addPlayer = (player) => {
     // Add text content to the <li> element
     liElement.textContent = player.last_name;
 
+    // Make player selectable
+    liElement.onclick = () => {
+      selectPlayer(player.id);
+    }
+
     // Append the <li> element to the <ul> element
     ulElement.appendChild(liElement);
 }
@@ -76,4 +81,8 @@ const previousPage = () => {
   }
   currentPage--;
   fetchPlayers(currentPage);
+}
+
+const selectPlayer = (playerId) => {
+  console.log(playerId);
 }
