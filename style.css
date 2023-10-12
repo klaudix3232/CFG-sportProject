@@ -132,3 +132,20 @@
     padding-top: 40px;
   }
   
+  
+  #previousButton, #nextButton, #pageNumber {
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+  
+  #previousButton, #nextButton {
+    /* backdrop-filter: blur(100px); */
+    background-color: #5454cd;
+    cursor: pointer;
+  }
+  
+  #previousButton:hover, #nextButton:hover {
+    background-color: #3a3a8f;
+  }
+  
