@@ -5,6 +5,7 @@ const messageElement = document.getElementById('message');
 const introView = document.getElementById('intro-view');
 const playerListView = document.getElementById('player-list-view');
 const playerView = document.getElementById('player-view');
+const waitingView = document.getElementById('waiting-view');
 
 
 const apiUrl = 'https://www.balldontlie.io/api/v1/players';
@@ -17,6 +18,7 @@ showMessageButton.addEventListener('click', function() {
 });
 
 const fetchPlayers = (page) => {
+  showWaitingView();
 
   apiUrlwithPage = apiUrl + '?page=' + page;
   console.log(apiUrlwithPage);
@@ -95,6 +97,7 @@ const selectPlayer = (playerId) => {
 }
 
 const fetchPlayerStats = (playerId) => {
+  showWaitingView();
   const url = 'https://www.balldontlie.io/api/v1/players/';
   const playerURL = url + playerId;
 
@@ -138,16 +141,26 @@ const showIntroView = () => {
   introView.style.display = 'block';
   playerListView.style.display = 'none';
   playerView.style.display = 'none';
+  waitingView.style.display = 'none';
 }
 
 const showPlayerList = () => {
   introView.style.display = 'none';
   playerListView.style.display = 'block';
   playerView.style.display = 'none';
+  waitingView.style.display = 'none';
 }
 
 const showPlayerDetails = () => {
   introView.style.display = 'none';
   playerListView.style.display = 'none';
   playerView.style.display = 'block';
+  waitingView.style.display = 'none';
+}
+
+const showWaitingView = () => {
+  introView.style.display = 'none';
+  playerListView.style.display = 'none';
+  playerView.style.display = 'none';
+  waitingView.style.display = 'block';
 }
