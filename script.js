@@ -35,13 +35,6 @@ const fetchPlayers = (page) => {
     const pageNumber = document.getElementById('pageNumber');
     pageNumber.textContent = currentPage;
 
-    var backButton = document.createElement("div");
-    backButton.textContent = 'Back';
-    backButton.onclick = () => {
-      showIntroView();
-    }
-    playerListView.appendChild(backButton);
-
     clearPlayerList();
     data.data.forEach(player => {
       addPlayer(player);
@@ -118,8 +111,7 @@ const fetchPlayerStats = (playerId) => {
 
 const showPlayer = (playerData) => {
   playerView.innerHTML = '';
-  playerView.style.display = 'block';
-  playerListView.style.display = 'none';
+  showPlayerDetails();
 
   var backButton = document.createElement("div");
   backButton.textContent = 'Back';
