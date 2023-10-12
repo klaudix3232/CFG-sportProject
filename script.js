@@ -1,6 +1,8 @@
 // Reference to the button and the message element
 const showMessageButton = document.getElementById('showMessageButton');
 const messageElement = document.getElementById('message');
+
+const introView = document.getElementById('intro-view');
 const playerListView = document.getElementById('player-list-view');
 const playerView = document.getElementById('player-view');
 
@@ -26,11 +28,18 @@ const fetchPlayers = (page) => {
       return response.json()}
       )
   .then(data => {
-    playerListView.style.display = 'block';
-    playerView.style.display = 'none';
+    showPlayerList();
 
     const pageNumber = document.getElementById('pageNumber');
     pageNumber.textContent = currentPage;
+
+    var backButton = document.createElement("div");
+    backButton.textContent = 'Back';
+    backButton.onclick = () => {
+      showIntroView();
+    }
+    playerListView.appendChild(backButton);
+
     clearPlayerList();
     data.data.forEach(player => {
       addPlayer(player);
@@ -112,7 +121,7 @@ const showPlayer = (playerData) => {
   var backButton = document.createElement("div");
   backButton.textContent = 'Back';
   backButton.onclick = () => {
-    backToPlayerList();
+    showPlayerDetails();
   }
   playerView.appendChild(backButton);
 
@@ -125,7 +134,20 @@ const showPlayer = (playerData) => {
   playerView.appendChild(playerPosition);
 }
 
-const backToPlayerList = () => {
+const showIntroView = () => {
+  introView.style.display = 'block';
+  playerListView.style.display = 'none';
   playerView.style.display = 'none';
+}
+
+const showPlayerList = () => {
+  introView.style.display = 'none';
   playerListView.style.display = 'block';
+  playerView.style.display = 'none';
+}
+
+const showPlayerDetails = () => {
+  introView.style.display = 'none';
+  playerListView.style.display = 'none';
+  playerView.style.display = 'block';
 }
