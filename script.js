@@ -1,6 +1,9 @@
 // Reference to the button and the message element
 const showMessageButton = document.getElementById('showMessageButton');
 const messageElement = document.getElementById('message');
+const playerListView = document.getElementById('player-list-view');
+const playerView = document.getElementById('player-view');
+
 
 const apiUrl = 'https://www.balldontlie.io/api/v1/players';
 
@@ -23,6 +26,9 @@ const fetchPlayers = (page) => {
       return response.json()}
       )
   .then(data => {
+    playerListView.style.display = 'block';
+    playerView.style.display = 'none';
+
     const pageNumber = document.getElementById('pageNumber');
     pageNumber.textContent = currentPage;
     clearPlayerList();
@@ -30,7 +36,6 @@ const fetchPlayers = (page) => {
       addPlayer(player);
     });
 
-    showPreviousNextButtons();
   })
   .catch(error => {
       console.error('Error fetching data:', error);
@@ -60,14 +65,6 @@ const addPlayer = (player) => {
     // Append the <li> element to the <ul> element
     ulElement.appendChild(liElement);
 }
-
-const showPreviousNextButtons = () => {
-  const previousButton = document.getElementById('previousButton');
-  const nextButton = document.getElementById('nextButton');
-
-  previousButton.style.display = 'block';
-  nextButton.style.display = 'block';
-};
 
 const nextPage = () => {
   currentPage++;
@@ -109,7 +106,8 @@ const fetchPlayerStats = (playerId) => {
 }
 
 const showPlayer = (playerData) => {
-  const playerView = document.getElementById('player-view');
+  playerView.style.display = 'block';
+  playerListView.style.display = 'none';
 
   var playerName = document.createElement("p");
   playerName.textContent = playerData.first_name + ' ' + playerData.last_name;
