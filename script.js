@@ -121,7 +121,7 @@ const showPlayer = (playerData) => {
   var backButton = document.createElement("div");
   backButton.textContent = 'Back';
   backButton.onclick = () => {
-    showPlayerDetails();
+    showPlayerList();
   }
   playerView.appendChild(backButton);
 
