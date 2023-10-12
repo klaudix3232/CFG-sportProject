@@ -23,6 +23,8 @@ const fetchPlayers = (page) => {
       return response.json()}
       )
   .then(data => {
+    const pageNumber = document.getElementById('pageNumber');
+    pageNumber.textContent = currentPage;
     clearPlayerList();
     data.data.forEach(player => {
       addPlayer(player);
