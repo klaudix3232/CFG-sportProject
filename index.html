@@ -3,6 +3,7 @@
 <head>
   <title>Klaudia Player List</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="loading.css">
 </head>
 <body>
   <img id="playerImg" src="gortat.png" />
@@ -71,7 +72,7 @@
 
   <!-- Only shown if waiting for data -->
   <div id="waiting-view" style="display: none">
-    waiting...
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
 
   <script src="script.js"></script>
