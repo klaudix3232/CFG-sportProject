@@ -59,7 +59,7 @@ const addPlayer = (player) => {
     var liElement = document.createElement("li");
 
     // Add text content to the <li> element
-    liElement.textContent = player.last_name;
+    liElement.textContent = player.first_name + ' ' + player.last_name;
 
     // Make player selectable
     liElement.onclick = () => {
@@ -110,23 +110,26 @@ const fetchPlayerStats = (playerId) => {
 }
 
 const showPlayer = (playerData) => {
-  playerView.innerHTML = '';
   showPlayerDetails();
 
-  var backButton = document.createElement("div");
-  backButton.textContent = 'Back';
-  backButton.onclick = () => {
-    showPlayerList();
-  }
-  playerView.appendChild(backButton);
+  var playerName = document.getElementById("playerName");
+  var playerPosition = document.getElementById("playerPosition");
+  // var playerHeight = document.getElementById("playerHeight");
+  var playerTeam = document.getElementById("playerTeam");
+  // var playerTeamAbbreviation = document.getElementById("playerTeamAbbreviation");
+  var playerCity = document.getElementById("playerCity");
+  var playerDivision = document.getElementById("playerDivision");
+  var playerConference = document.getElementById("playerConference");
 
-  var playerName = document.createElement("p");
+
   playerName.textContent = playerData.first_name + ' ' + playerData.last_name;
-  playerView.appendChild(playerName);
-
-  var playerPosition = document.createElement("p");
   playerPosition.textContent = playerData.position;
-  playerView.appendChild(playerPosition);
+  // playerHeight.textContent = playerData.height_feet + ' feet ' + playerData.height_inches + ' inches';
+  playerTeam.textContent = playerData.team.full_name;
+  // playerTeamAbbreviation = playerData.team.abbreviation;
+  playerCity.textContent = playerData.team.city;
+  playerDivision.textContent = playerData.team.division;
+  playerConference.textContent = playerData.team.conference;
 }
 
 const showIntroView = () => {

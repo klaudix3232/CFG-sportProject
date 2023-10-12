@@ -13,6 +13,7 @@
     width: 100%;
     height: 100vh;
     filter: blur(100px);
+    user-select: none;
     /* backdrop-filter: blur(200px); */
   }
   
@@ -22,6 +23,7 @@
   }
   
   #playerImg {
+    user-select: none;
     position: absolute;
     top: 5vh;
     right: 5vw;
@@ -70,16 +72,21 @@
     opacity: 60%;
   }
   
-  #fetchPlayersButton {
+  #fetchPlayersButton, .back-button {
     margin-top: 20px;
     background-color: #5454cd;
     border: none;
     padding: 30px;
     color: white;
+    width: fit-content;
     font-weight: 600;
   }
   
-  #fetchPlayersButton:hover {
+  .back-button {
+    padding: 10px 30px;
+  }
+  
+  #fetchPlayersButton:hover, .back-button:hover {
     cursor: pointer;
     background-color: #3a3a8f;
   }
@@ -91,10 +98,37 @@
     position: absolute;
     /* margin-top: 500px; */
     bottom: 40px;
-    left: 40px;
+    /* left: 40px; */
+    right: 40px;
+    text-align: right;
   }
   
   body {
     min-height: 100vh;
+  }
+  
+  #player-list {
+    backdrop-filter: blur(100px);
+    width: fit-content;
+  
+  }
+  
+  #player-list > li {
+    padding: 10px;
+    list-style: none;
+    cursor: pointer;
+  }
+  
+  #player-list > li:hover {
+    background: #3a3a8f;
+  }
+  
+  #playerDetailsTable > tbody > tr > td {
+    backdrop-filter: blur(100px);
+    padding: 10px 20px;
+  }
+  
+  #playerDetailsTable {
+    padding-top: 40px;
   }
   

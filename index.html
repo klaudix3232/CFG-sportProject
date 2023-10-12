@@ -5,6 +5,8 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <img id="playerImg" src="gortat.png" />
+  <div id="bg"></div>
   <div id="nav">
     <img id="logo" src="logo.svg"/>
     <p id="title">Klaudia<br/>Player List</p>
@@ -19,11 +21,48 @@
 
   <!-- Only shown if player is selected -->
   <div id="player-view" style="display: none">
+    <div class="back-button" onclick="showPlayerList()">Back</div>
+    <table id="playerDetailsTable">
+      <tbody>
+        <tr>
+          <td>Full Name</td>
+          <td id="playerName"></td>
+        </tr>
+        <tr>
+          <td>Position</td>
+          <td id="playerPosition"></td>
+        </tr>
+        <!-- <tr>
+          <td>Height</td>
+          <td id="playerHeight"></td>
+        </tr> -->
+        <tr>
+          <td>Team</td>
+          <td id="playerTeam"></td>
+        </tr>
+        <!-- <tr>
+          <td>Team Code</td>
+          <td id="playerTeamAbbreviation"></td>
+        </tr> -->
+        <tr>
+          <td>City</td>
+          <td id="playerCity"></td>
+        </tr>
+        <tr>
+          <td>Division</td>
+          <td id="playerDivision"></td>
+        </tr>
+        <tr>
+          <td>Conference</td>
+          <td id="playerConference"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Only shown if player list is pulled -->
   <div id="player-list-view" style="display: none">
-    <div id="back-button" onclick="showIntroView()">Back</div>
+    <div class="back-button" onclick="showIntroView()">Back</div>
     <ul id="player-list"></ul>
     <div id="previousButton" onclick="previousPage()"><</div>
     <div id="pageNumber"></div>
@@ -34,11 +73,12 @@
   <div id="waiting-view" style="display: none">
     waiting...
   </div>
-  <img id="playerImg" src="gortat.png" />
-  <div id="bg"></div>
+
   <script src="script.js"></script>
   </body>
   <footer>
-    Created by Klaudia Rafałowska. Copyright 2023.
+    Created by<br/>
+    Klaudia Rafałowska.<br/>
+    Copyright 2023.
   </footer>
 </html>
