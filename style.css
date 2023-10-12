@@ -30,6 +30,7 @@
   }
   
   p, h1, div {
+    font-family: 'Helvetica', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
   }
   
@@ -54,5 +55,32 @@
     font-weight: 600;
     font-stretch: ultra-condensed;
     font-kerning: normal;
+  }
+  
+  #intro-view, #player-view, #waiting-view, #player-list-view {
+    margin-left: 40px;
+  }
+  
+  h1 {
+    font-size: 50px;
+  }
+  
+  #message {
+    max-width: 40vw;
+    opacity: 60%;
+  }
+  
+  #fetchPlayersButton {
+    margin-top: 20px;
+    background-color: #5454cd;
+    border: none;
+    padding: 30px;
+    color: white;
+    font-weight: 600;
+  }
+  
+  #fetchPlayersButton:hover {
+    cursor: pointer;
+    background-color: #3a3a8f;
   }
   

@@ -1,5 +1,5 @@
 // Reference to the button and the message element
-const showMessageButton = document.getElementById('showMessageButton');
+const fetchPlayersButton = document.getElementById('fetchPlayersButton');
 const messageElement = document.getElementById('message');
 
 const introView = document.getElementById('intro-view');
@@ -13,7 +13,7 @@ const apiUrl = 'https://www.balldontlie.io/api/v1/players';
 let currentPage = 1;
 
 // Function to show the message when the button is clicked
-showMessageButton.addEventListener('click', function() {
+fetchPlayersButton.addEventListener('click', function() {
   fetchPlayers(currentPage);
 });
 
